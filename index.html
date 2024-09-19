@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Auto center</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    </head>
+
+    <body class="bg-white text-gray-900">
+
+        <!-- Navbar -->
+        <header class="bg-white">
+            <nav class="px-10 py-4 flex justify-between items-center">
+                <!-- Раздел логотипа -->
+                <div class="w-16 h-16">
+                    <img src="./img/logo.png" alt="logo">
+                </div>
+                <!-- Меню гамбургера (скрыто на больших экранах) -->
+                <div class="block lg:hidden">
+                    <button title="hamburger" id="menu-btn" class="text-2xl focus:outline-none">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Ссылки навигации (скрыты на мобильных устройствах, видны на экранах среднего и большего размера) -->
+                <ul class="hidden lg:flex space-x-8">
+                    <li><a href="#" class="hover:text-red-500">Авто из Японии</a></li>
+                    <li><a href="#" class="hover:text-red-500">Авто из Китая</a></li>
+                    <li><a href="#" class="hover:text-red-500">Авто из Кореи</a></li>
+                    <li class="relative group">
+                        <a href="#" class="hover:text-red-500 flex items-center">О нас <i
+                                class="fa fa-chevron-down ml-2"></i></a>
+                        <!-- Раскрывающееся меню -->
+                        <ul
+                            class="absolute left-0 top-full hidden group-hover:block bg-white text-gray-900 rounded-lg shadow-lg py-2 w-40 z-40 text-center">
+                            <li><a href="#" class="block p-2 hover:text-red-500">Компания</a></li>
+                            <li><a href="#" class="block p-2 hover:text-red-500">Отзывы</a></li>
+                            <li><a href="#" class="block p-2 hover:text-red-500">Контакты</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Контактная информация (скрыта на мобильных устройствах, видна на экранах среднего и большего размера) -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-500 text-xl" title="whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-500 text-xl" title="telegram"><i
+                                class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="flex flex-col text-left">
+                        <a href="tel:+71234567890" class="font-bold text-gray-900">+7 123 456 78 90</a>
+                        <small class="text-gray-500">Звонок по РФ бесплатный</small>
+                    </div>
+                </div>
+            </nav>
+            <!-- Мобильное меню -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg">
+                <ul class="flex flex-col items-center px-4 py-2 space-y-4">
+                    <li><a href="#" class="block w-full hover:text-red-500">Авто из Японии</a></li>
+                    <li><a href="#" class="block w-full hover:text-red-500">Авто из Китая</a></li>
+                    <li><a href="#" class="block w-full hover:text-red-500">Авто из Кореи</a></li>
+                    <li class="relative group">
+                        <a href="#" class="flex justify-between w-full items-center">О нас <i
+                                class="ml-2 fa fa-chevron-down"></i></a>
+                        <!-- Раскрывающееся меню (мобильное) -->
+                        <ul
+                            class="hidden group-hover:block bg-white text-gray-900 mt-2 rounded-lg shadow-lg py-2 w-full">
+                            <li><a href="#" class="block px-4 py-2 hover:text-red-500">Компания</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:text-red-500">Отзывы</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:text-red-500">Контакты</a></li>
+                        </ul>
+                    </li>
+                    <!-- Раздел контактов для мобильных устройств -->
+                    <li class="flex flex-col items-center gap-2 py-2">
+                        <div class="flex gap-2 items-center">
+                            <a href="#" class="text-gray-400 hover:text-gray-500 text-xl" title="whatsapp"><i
+                                    class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-gray-500 text-xl" title="telegram"><i
+                                    class="fab fa-telegram"></i></a>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <a href="tel:+71234567890" class="font-semibold text-gray-900">+7 123 456 78 90</a>
+                            <small class="text-gray-500">Звонок по РФ бесплатный</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="./img/banner.jpg" class="carousel-image" alt="Авто из Японии">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/banner1.jpg" class="carousel-image" alt="Авто из Кореи">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/banner2.jpg" class="carousel-image" alt="Авто из Китая">
+                </div>
+            </div>
+            <div class="caption-container">
+                <h2>Авто из Японии, Кореи и Китая с выгодной до 30% ниже рынка РФ</h2>
+                <p>Высокий сервис для клиентов, от заключения договора до выдачи/отправки авто</p>
+                <button class="buy-btn">Рассчитать стоимость</button>
+            </div>
+            <button class="prev" id="prevBtn">&#10094;</button>
+            <button class="next" id="nextBtn">&#10095;</button>
+        </section>
+
+        <!-- Автомобили из Японии -->
+        <section>
+            <div class="cars-section">
+                <div class="title-paragraph">
+                    <h2>Автомобили из Японии</h2>
+                    <div class="flex items-center justify-between w-full">
+                        <p>Toyota, Honda, Nissan, и другие японские автомобили</p>
+                        <a href="#" class="view-all-link flex items-center ml-auto">
+                            <span>Смотреть все</span>
+                            <i class="fa fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cars-grid">
+                    <div class="car-card">
+                        <img src="./img/subaru.png" alt="Subaru LEVORG VN5">
+                        <h3>Subaru LEVORG VN5</h3>
+                        <ul>
+                            <li>2021</li>
+                            <li>1.8 Л</li>
+                            <li>4WD</li>
+                            <li>Бензин</li>
+                            <li>Вариатор</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 115 600 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/mazda.png" alt="Mazda Mazda6 2.5 AT Touring">
+                        <h3>Mazda Mazda6 2.5 AT Touring</h3>
+                        <ul>
+                            <li>2022</li>
+                            <li>2.5 Л</li>
+                            <li>Передний</li>
+                            <li>Бензин</li>
+                            <li>Автомат</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 802 400 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/toyota.png" alt="Toyota CROWN AZSH21">
+                        <h3>Toyota CROWN AZSH21</h3>
+                        <ul>
+                            <li>2019</li>
+                            <li>2.5 Л</li>
+                            <li>4WD</li>
+                            <li>Гибрид</li>
+                            <li>Планетарная</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 852 600 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/lexus.png" alt="Lexus RC F USC10">
+                        <h3>Lexus RC F USC10</h3>
+                        <ul>
+                            <li>2019</li>
+                            <li>5.0 Л</li>
+                            <li>Задний</li>
+                            <li>Бензин</li>
+                            <li>Автомат</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>5 965 600 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/mitsubishi.png" alt="Mitsubishi ECLIPSE CROSS">
+                        <h3>Mitsubishi ECLIPSE CROSS</h3>
+                        <ul>
+                            <li>2019</li>
+                            <li>1.5 Л</li>
+                            <li>Передний</li>
+                            <li>Бензин</li>
+                            <li>Вариатор</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 005 200 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/subaru1.png" alt="Subaru IMPREZA WRX VAG">
+                        <h3>Subaru IMPREZA WRX VAG</h3>
+                        <ul>
+                            <li>2018</li>
+                            <li>2.0 Л</li>
+                            <li>4WD</li>
+                            <li>Бензин</li>
+                            <li>Вариатор</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 852 600 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/lexus1.png" alt="Lexus RX200T AGL20W">
+                        <h3>Lexus RX200T AGL20W</h3>
+                        <ul>
+                            <li>2017</li>
+                            <li>2.0 Л</li>
+                            <li>Передний</li>
+                            <li>Бензин</li>
+                            <li>Автомат</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 999 800 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+
+                    <div class="car-card">
+                        <img src="./img/mitsubishi1.png" alt="Mitsubishi Outlander PHEV">
+                        <h3>Mitsubishi Outlander PHEV</h3>
+                        <ul>
+                            <li>2013</li>
+                            <li>3.0 Л</li>
+                            <li>4WD</li>
+                            <li>Бензин</li>
+                            <li>Автомат</li>
+                        </ul>
+                        <div class="price-button-row">
+                            <p>2 366 200 ₽</p>
+                            <button class="btn">Оставить Заявку</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <button class="view-all-btn">Смотреть все</button>
+                </div>
+
+        </section>
+
+        <!-- Автомобили из Китая и Кореи -->
+        <section class="cars-section py-16">
+            <div class="title-paragraph mb-6">
+                <h2 class="text-2xl font-bold">Автомобили из Китая и Кореи</h2>
+                <p class="text-lg mt-2">Поможем с покупкой автомобилей из Китая и Кореи.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                <div class="relative rounded-2xl overflow-hidden bg-cover bg-right h-72"
+                    style="background-image: url('./img/banner.jpg');">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 flex flex-col justify-around lg:justify-between items-center lg:items-start text-center lg:text-left p-6">
+                        <div class="flex flex-col">
+                            <h3 class="text-white text-2xl font-semibold">Автомобили из Китая</h3>
+                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0">Chery, Haval, EXEED и другие
+                                китайские автомобили</p>
+                        </div>
+                        <button
+                            class="mt-4 px-4 py-2 bg-gray-500 bg-opacity-60 text-white rounded-lg hover:bg-opacity-90">
+                            Смотреть в каталоге
+                        </button>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden bg-cover bg-right h-72"
+                    style="background-image: url('./img/banner2.jpg');">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 flex flex-col justify-around lg:justify-between items-center lg:items-start text-center lg:text-left p-6">
+                        <div class="flex flex-col">
+                            <h3 class="text-white text-2xl font-semibold">Автомобили из Кореи</h3>
+                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0">Hyundai, KIA, Genesis и другие
+                                корейские автомобили</p>
+                        </div>
+                        <button
+                            class="mt-4 px-4 py-2 bg-gray-500 bg-opacity-60 text-white rounded-lg hover:bg-opacity-90">
+                            Смотреть в каталоге
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden bg-cover bg-center h-96 lg:col-span-2 mt-16"
+                style="background-image: url('./img/banner1.jpg');">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 flex flex-col justify-center lg:justify-start items-center lg:items-start text-center lg:text-left p-12 z-10">
+
+                    <div class="flex flex-col lg:flex-row items-center justify-between w-full">
+                        <div class="lg:w-1/2"> <!-- Take half width on large screens -->
+                            <h3 class="text-white text-3xl font-extrabold">О нас</h3>
+                            <p class="text-white mt-3 lg:leading-relaxed lg:text-xl lg:font-normal">
+                                Компания «AUTOCENTER» предлагает широкий выбор автомобилей от ведущих мировых производителей.
+                                Мы специализируемся на продаже новых и подержанных автомобилей. Наша команда профессионалов
+                                поможет вам выбрать идеальный автомобиль, учитывая ваши потребности и бюджет.
+                            </p>
+                        </div>
+                        <img src="./img/footer.png" alt="Logo" class="mt-4 lg:mt-0 lg:w-32 w-24">
+                    </div>
+                </div>
+            </div>
+
+                <div
+                    class="hidden xl:flex absolute bottom-[10px] left-1/2 transform -translate-x-1/2 w-[80%] bg-white shadow-2xl p-4 justify-around items-center gap-4 rounded-xl z-30 h-36">
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-clock text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">Короткие сроки доставки</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-shield-alt text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">Полное сопровождение. Связь с клиентом 24/7</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-handshake text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">Опыт работы более 5 лет</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-ruble-sign text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">⁠Привезем авто с выгодой до 30% ниже рынка РФ</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-thumbs-up text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">Высокий сервис для клиентов</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-users text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">Полная клиентоориентированность</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-user-tie text-3xl text-gray-700 mb-2"></i>
+                        <div class="text-center">
+                            <p class="font-semibold text-gray-700">⁠Профессионализм сотрудников компании</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы клиентов -->
+        <section class="reviews-section">
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex flex-col justify-center items-center sm:flex-row sm:items-center sm:justify-between max-sm:gap-8">
+                    <div class="reviews-header">
+                        <h2>Отзывы клиентов<span
+                                id="review-count">253</span></h2>
+                        <div class="average-rating">
+                            <span>4,5</span>
+                            <div class="stars">
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star full">★</span>
+                                <span class="star half">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <div class="flex items-center gap-8">
+                        <button id="slider-button-left" title="left"
+                            class="swiper-button-prev group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600"
+                            data-carousel-prev>
+                            <i class="fas fa-chevron-left text-indigo-600 group-hover:text-white"></i>
+                        </button>
+                        <button id="slider-button-right" title="right"
+                            class="swiper-button-next group flex justify-center items-center border border-solid border-indigo-600 w-12 h-12 transition-all duration-500 rounded-full hover:bg-indigo-600"
+                            data-carousel-next>
+                            <i class="fas fa-chevron-right text-indigo-600 group-hover:text-white"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Slider wrapper -->
+                <div class="lg:flex grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div
+                            class="swiper-slide group bg-white border border-solid h-auto border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600 slide-active:border-indigo-600">
+                            <!-- Review 1 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Королёв Александр</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                    </div>
+                                    <p>Отличная компания, всем советую, пользуюсь услугами второй раз. Смогли купить авто с автоаукциона Японии очень быстро. Большое спасибо!</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600 slide-active:border-indigo-600">
+                            <!-- Review 2 (4-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Киселёв Василий</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                    <p>По итогу хочу сказать следующее: во Владивосток доставить автомобиль из Японии - очень быстро и дешево, Все в семье были довольны.</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                            <!-- Review 3 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Иванова Ольга</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                    </div>
+                                    <p>Все круто, все понравилось!) не первый раз вез себе автомобиль из кореи с пробегом. Подкупило то, что мне потом предложили снять обзор на моего субаря)</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600 slide-active:border-indigo-600">
+                            <!-- Review 4 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Лебедев Виктор</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                    </div>
+                                    <p>Качество услуг на высоте, заказать авто из Китая и пригнать оказалось очень просто. Работали с менеджером Кириллом, всегда был на связи.</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                            <!-- Review 5 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Киселёв Василий</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                    </div>
+                                    <p>По итогу хочу сказать следующее: во Владивосток доставить автомобиль из Японии - очень быстро и дешево, Все в семье были довольны.</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                            <!-- Review 6 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Королёв Александр</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star half">★</span>
+                                    </div>
+                                    <p>Отличная компания, всем советую, пользуюсь услугами второй раз. Смогли купить авто с автоаукциона Японии очень быстро. Большое спасибо!</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                            <!-- Review 7 (4.5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Зайцева Анастасия</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                    </div>
+                                    <p>Порекомендовал товарищ, потому что не знал где купить автомобили из японии. Спасибо, доставка авто супер, буду рекомендовать друзьям ❤️</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600">
+                            <!-- Review 8 (5-star rating) -->
+                            <div class="review-item">
+                                <i class="fas fa-user-circle text-gray-600 group-hover:text-gray-900 mt-2 mr-2"></i>
+                                <div class="review-content">
+                                    <h3>Королёв Александр</h3>
+                                    <div class="stars">
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star full">★</span>
+                                        <span class="star half">★</span>
+                                    </div>
+                                    <p>Отличная компания, всем советую, пользуюсь услугами второй раз. Смогли купить авто с автоаукциона Японии очень быстро. Большое спасибо!</p>
+                                    <small>7 октября 2023 г.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контактная информация -->
+        <section class="bg-[#191919] text-white rounded-2xl pt-10 px-10 mx-auto max-w-[90%] my-20">
+            <div class="flex flex-wrap">
+
+                <div class="w-full md:w-1/2 lg:w-1/2 mb-6 lg:mb-0 pr-6">
+                    <div class="flex flex-col justify-between h-full">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Контактная информация</h2>
+                            <p class="mb-6 text-[#757575] text-lg">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей.</p>
+                        </div>
+
+                        <div>
+                            <div class="flex mb-4">
+                                <div class="w-1/2 pr-2">
+                                    <h3 class="font-semibold text-[#757575]">Позвонить</h3>
+                                    <p>+7 123 456 78 90</p>
+                                </div>
+                                <div class="w-1/2 pl-2 flex items-center">
+                                    <i class="fas fa-location text-white-400 mr-2 text-xl"></i> <!-- 2GIS Icon -->
+                                    <a href="https://2gis.ru" class="text-white text-lg hover:underline">Мы на 2гис</a>
+                                </div>
+                            </div>
+
+
+                            <div class="flex mb-4">
+                                <div class="w-1/2 pr-2">
+                                    <h3 class="font-semibold text-[#757575]">Написать</h3>
+                                    <p>info@example.com</p>
+                                </div>
+                                <div class="w-1/2 pl-2 flex items-center">
+                                    <i class="fab fa-yandex text-white-400 mr-2 text-xl"></i>
+                                    <a href="https://yandex.com" class="text-white text-lg hover:underline">Яндекс картах</a>
+                                </div>
+                            </div>
+
+
+                            <div class="flex mb-4">
+                                <div class="w-1/2 pr-2">
+                                    <h3 class="font-semibold text-[#757575]">Адрес</h3>
+                                    <p>123 Main Street, Tokyo, Japan</p>
+                                </div>
+                                <div class="w-1/2 pl-2 flex items-center">
+                                    <i class="fab fa-vk text-white-400 mr-2 text-xl"></i>
+                                    <a href="https://vk.com" class="text-white text-lg hover:underline">Мы на VК</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 lg:w-1/2 bg-white text-black p-10 -mb-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Оставить заявку</h2>
+                    <form id="applicationForm" action="#" method="post">
+                        <div class="flex flex-wrap -mx-2 mb-4">
+                            <div class="w-full md:w-1/2 px-2">
+                                <label for="name" class="block text-sm font-medium">Имя</label>
+                                <input type="text" id="name" name="name" placeholder="Введите имя"
+                                    class="w-full p-2 rounded bg-gray-200" required>
+                            </div>
+                            <div class="w-full md:w-1/2 px-2">
+                                <label for="phone" class="block text-sm font-medium">Телефон (Обязательно)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7"
+                                    class="w-full p-2 rounded bg-gray-200 " required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium">Уточните свой вопрос</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Введите текст сообщения"
+                                class="w-full p-2 rounded bg-gray-200" required></textarea>
+                        </div>
+
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="agreement" name="agreement" class="mr-2" required>
+                                <label for="agreement" class="text-sm">С <span class="text-blue-400"><a href='#' title='toc'>правилами политики конфиденциальности</a></span> ознакомлен</label>
+                            </div>
+                            <button type="submit" id="submitButton"
+                                class="bg-blue-500 text-gray-600 font-semibold py-2 px-4 rounded hover:bg-green-700" disabled>Отправить</button>
+                        </div>
+                    </form>
+                    <div id="successMessage" class="hidden text-green-500 mt-4">Форма отправлена</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer-top">
+
+                <div class="footer-left">
+
+                    <div class="footer-logo">
+                        <img src="./img/footer.png" alt="logo">
+                    </div>
+
+
+                    <div class="footer-links">
+                        <a href="/about-us">О нас</a>
+                        <a href="/cars-catalogue">Каталог авто</a>
+                    </div>
+                </div>
+
+
+                <div class="footer-brands">
+                    <div>
+                        <h4>Авто из Японии</h4>
+                        <p>
+                            <a href="#">Toyota</a>
+                            <a href="#">Honda</a>
+                            <a href="#">Mazda</a>
+                            <a href="#">Mitsubishi</a>
+                            <a href="#">Subaru</a>
+                            <a href="#">Lexus</a>
+                            <a href="#">BMW</a>
+                            <a href="#">Daihatsu</a>
+
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4>Авто из Китая</h4>
+                        <p>
+                            <a href="#">Changan</a>
+                            <a href="#">Exeed</a>
+                            <a href="#">Geely</a>
+                            <a href="#">Chery</a>
+                            <a href="#">Haval</a>
+                            <a href="#">FAW</a>
+                            <a href="#">BYD</a>
+                            <a href="#">JAC</a>
+                            <a href="#">Lifan</a>
+                            <a href="#">DongFeng</a>
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4>Авто из Кореи</h4>
+                        <p>
+                            <a href="#">Hyundai</a>
+                            <a href="#">Kia</a>
+                            <a href="#">SsangYong</a>
+                            <a href="#">Daewoo</a>
+                            <a href="#">Samsung</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+
+                <div class="footer-copyright">
+                    <p>Политика конфиденциальности</p>
+                    <p class='text-[#757575]'>&copy; 2003–2024 ООО "Автоцентр"</p>
+                </div>
+
+                <div class="footer-contact">
+
+                    <div class="footer-icons">
+                        <a href="#" class="footer-icon" title='whatsapp'>
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="footer-icon" title='telegram'>
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="footer-icon" title='youtube'>
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+
+
+                    <div class="footer-phone">
+                        <p class='text-lg font-semibold'>+7 123 456 78 90</p>
+                        <p class="footer-phone-note">Звонок по РФ бесплатный</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
