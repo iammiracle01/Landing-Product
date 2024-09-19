@@ -239,8 +239,8 @@
     background-color: darkred;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
+
+@media (max-width: 1440px) {
     .cars-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
