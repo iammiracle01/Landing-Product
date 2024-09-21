@@ -18,7 +18,7 @@
 
         <!-- Navbar -->
         <header class="bg-white">
-            <nav class="px-10 py-4 flex justify-between items-center">
+            <nav class="px-4 lg:px-10 py-4 flex justify-between items-center">
                 <!-- Раздел логотипа -->
                 <div class="w-16 h-16">
                     <img src="./img/logo.png" alt="logo">
@@ -61,7 +61,7 @@
                 </div>
             </nav>
             <!-- Мобильное меню -->
-            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg">
+            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg w-full">
                 <ul class="flex flex-col items-center px-4 py-2 space-y-4">
                     <li><a href="#" class="block w-full hover:text-red-500">Авто из Японии</a></li>
                     <li><a href="#" class="block w-full hover:text-red-500">Авто из Китая</a></li>
@@ -94,6 +94,7 @@
             </div>
         </header>
 
+
         <!-- Hero -->
         <section class="carousel-container">
             <div class="carousel">
@@ -124,7 +125,7 @@
                     <div class="flex items-center justify-between w-full">
                         <p>Toyota, Honda, Nissan, и другие японские автомобили</p>
                         <a href="#" class="view-all-link flex items-center ml-auto">
-                            <span>Смотреть все</span>
+                            <span class="text-xs lg:text-lg">Смотреть все</span>
                             <i class="fa fa-chevron-right ml-2"></i>
                         </a>
                     </div>
@@ -279,7 +280,7 @@
                         class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 flex flex-col justify-around lg:justify-between items-center lg:items-start text-center lg:text-left p-6">
                         <div class="flex flex-col">
                             <h3 class="text-white text-2xl font-semibold">Автомобили из Китая</h3>
-                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0">Chery, Haval, EXEED и другие
+                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0 text-xs md:text-sm lg:text-xl ">Chery, Haval, EXEED и другие
                                 китайские автомобили</p>
                         </div>
                         <button
@@ -294,7 +295,7 @@
                         class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30 flex flex-col justify-around lg:justify-between items-center lg:items-start text-center lg:text-left p-6">
                         <div class="flex flex-col">
                             <h3 class="text-white text-2xl font-semibold">Автомобили из Кореи</h3>
-                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0">Hyundai, KIA, Genesis и другие
+                            <p class="text-white mt-2 max-w-[70%] mx-auto lg:mx-0 text-xs md:text-sm lg:text-xl ">Hyundai, KIA, Genesis и другие
                                 корейские автомобили</p>
                         </div>
                         <button
@@ -312,7 +313,7 @@
                     <div class="flex flex-col lg:flex-row items-center justify-between w-full">
                         <div class="lg:w-1/2"> <!-- Take half width on large screens -->
                             <h3 class="text-white text-3xl font-extrabold">О нас</h3>
-                            <p class="text-white mt-3 lg:leading-relaxed lg:text-xl lg:font-normal">
+                            <p class="text-white mt-3 leading-relaxed text-xs md:text-sm lg:text-xl lg:font-normal">
                                 Компания «AUTOCENTER» предлагает широкий выбор автомобилей от ведущих мировых производителей.
                                 Мы специализируемся на продаже новых и подержанных автомобилей. Наша команда профессионалов
                                 поможет вам выбрать идеальный автомобиль, учитывая ваши потребности и бюджет.
@@ -418,7 +419,7 @@
                     </div>
                 </div>
                 <!-- Slider wrapper -->
-                <div class="lg:flex grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 swiper mySwiper">
+                <div class="lg:flex grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 swiper mySwiper mt-2">
                     <div class="swiper-wrapper">
                         <div
                             class="swiper-slide group bg-white border border-solid h-auto border-gray-300 rounded-2xl p-6 transition-all duration-500 w-full hover:border-indigo-600 slide-active:border-indigo-600">
@@ -579,78 +580,76 @@
         </section>
 
         <!-- Контактная информация -->
-        <section class="bg-[#191919] text-white rounded-2xl pt-10 px-10 mx-auto max-w-[90%] my-20">
+        <section class="bg-[#191919] text-white rounded-2xl pt-10 px-6 md:px-10 mx-auto max-w-[90%] my-20">
             <div class="flex flex-wrap">
 
-                <div class="w-full md:w-1/2 lg:w-1/2 mb-6 lg:mb-0 pr-6">
+                <div class="w-full md:w-1/2 mb-6 lg:mb-0 pr-0 md:pr-6">
                     <div class="flex flex-col justify-between h-full">
                         <div>
-                            <h2 class="text-2xl font-bold mb-4">Контактная информация</h2>
-                            <p class="mb-6 text-[#757575] text-lg">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей.</p>
+                            <h2 class="text-xl md:text-2xl font-bold mb-4">Контактная информация</h2>
+                            <p class="mb-6 text-[#757575] text-sm md:text-lg">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей.</p>
                         </div>
 
                         <div>
-                            <div class="flex mb-4">
-                                <div class="w-1/2 pr-2">
-                                    <h3 class="font-semibold text-[#757575]">Позвонить</h3>
-                                    <p>+7 123 456 78 90</p>
+                            <div class="flex flex-wrap mb-4">
+                                <div class="w-full md:w-1/2 pr-0 md:pr-2 mb-4 md:mb-0">
+                                    <h3 class="font-semibold text-[#757575] text-sm md:text-base">Позвонить</h3>
+                                    <p class="text-sm md:text-base">+7 123 456 78 90</p>
                                 </div>
-                                <div class="w-1/2 pl-2 flex items-center">
-                                    <i class="fas fa-location text-white-400 mr-2 text-xl"></i> <!-- 2GIS Icon -->
-                                    <a href="https://2gis.ru" class="text-white text-lg hover:underline">Мы на 2гис</a>
-                                </div>
-                            </div>
-
-
-                            <div class="flex mb-4">
-                                <div class="w-1/2 pr-2">
-                                    <h3 class="font-semibold text-[#757575]">Написать</h3>
-                                    <p>info@example.com</p>
-                                </div>
-                                <div class="w-1/2 pl-2 flex items-center">
-                                    <i class="fab fa-yandex text-white-400 mr-2 text-xl"></i>
-                                    <a href="https://yandex.com" class="text-white text-lg hover:underline">Яндекс картах</a>
+                                <div class="w-full md:w-1/2 pl-0 md:pl-2 flex items-center">
+                                    <i class="fas fa-location text-white-400 mr-2 text-lg md:text-xl"></i>
+                                    <a href="https://2gis.ru" class="text-white text-sm md:text-lg hover:underline">Мы на 2гис</a>
                                 </div>
                             </div>
 
-
-                            <div class="flex mb-4">
-                                <div class="w-1/2 pr-2">
-                                    <h3 class="font-semibold text-[#757575]">Адрес</h3>
-                                    <p>123 Main Street, Tokyo, Japan</p>
+                            <div class="flex flex-wrap mb-4">
+                                <div class="w-full md:w-1/2 pr-0 md:pr-2 mb-4 md:mb-0">
+                                    <h3 class="font-semibold text-[#757575] text-sm md:text-base">Написать</h3>
+                                    <p class="text-sm md:text-base">info@example.com</p>
                                 </div>
-                                <div class="w-1/2 pl-2 flex items-center">
-                                    <i class="fab fa-vk text-white-400 mr-2 text-xl"></i>
-                                    <a href="https://vk.com" class="text-white text-lg hover:underline">Мы на VК</a>
+                                <div class="w-full md:w-1/2 pl-0 md:pl-2 flex items-center">
+                                    <i class="fab fa-yandex text-white-400 mr-2 text-lg md:text-xl"></i>
+                                    <a href="https://yandex.com" class="text-white text-sm md:text-lg hover:underline">Яндекс картах</a>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap mb-4">
+                                <div class="w-full md:w-1/2 pr-0 md:pr-2 mb-4 md:mb-0">
+                                    <h3 class="font-semibold text-[#757575] text-sm md:text-base">Адрес</h3>
+                                    <p class="text-sm md:text-base">123 Main Street, Tokyo, Japan</p>
+                                </div>
+                                <div class="w-full md:w-1/2 pl-0 md:pl-2 flex items-center">
+                                    <i class="fab fa-vk text-white-400 mr-2 text-lg md:text-xl"></i>
+                                    <a href="https://vk.com" class="text-white text-sm md:text-lg hover:underline">Мы на VК</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full md:w-1/2 lg:w-1/2 bg-white text-black p-10 -mb-6 rounded-lg">
-                    <h2 class="text-2xl font-bold mb-4">Оставить заявку</h2>
+                <div class="w-full md:w-1/2 bg-white text-black p-6 md:p-10 rounded-lg">
+                    <h2 class="text-xl md:text-2xl font-bold mb-4">Оставить заявку</h2>
                     <form id="applicationForm" action="#" method="post">
                         <div class="flex flex-wrap -mx-2 mb-4">
                             <div class="w-full md:w-1/2 px-2">
-                                <label for="name" class="block text-sm font-medium">Имя</label>
+                                <label for="name" class="block text-sm md:text-base font-medium">Имя</label>
                                 <input type="text" id="name" name="name" placeholder="Введите имя"
-                                    class="w-full p-2 rounded bg-gray-200" required>
+                                    class="w-full p-2 rounded bg-gray-200 text-sm md:text-base" required>
                             </div>
                             <div class="w-full md:w-1/2 px-2">
-                                <label for="phone" class="block text-sm font-medium">Телефон (Обязательно)</label>
+                                <label for="phone" class="block text-sm md:text-base font-medium">Телефон (Обязательно)</label>
                                 <input type="tel" id="phone" name="phone" placeholder="+7"
-                                    class="w-full p-2 rounded bg-gray-200 " required>
+                                    class="w-full p-2 rounded bg-gray-200 text-sm md:text-base" required>
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="message" class="block text-sm font-medium">Уточните свой вопрос</label>
+                            <label for="message" class="block text-sm md:text-base font-medium">Уточните свой вопрос</label>
                             <textarea id="message" name="message" rows="4" placeholder="Введите текст сообщения"
-                                class="w-full p-2 rounded bg-gray-200" required></textarea>
+                                class="w-full p-2 rounded bg-gray-200 text-sm md:text-base" required></textarea>
                         </div>
 
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex flex-wrap items-center justify-between mb-4">
                             <div class="flex items-center">
                                 <input type="checkbox" id="agreement" name="agreement" class="mr-2" required>
                                 <label for="agreement" class="text-sm">С <span class="text-blue-400"><a href='#' title='toc'>правилами политики конфиденциальности</a></span> ознакомлен</label>

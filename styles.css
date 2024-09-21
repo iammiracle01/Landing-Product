@@ -1,8 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 .carousel-container {
     position: relative;
     max-width: 95%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
     overflow: hidden;
     background-color: #fff;
     border-radius: 15px;
@@ -98,7 +105,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Медиа-запрос для экранов меньше 992 пикселей */
 @media (max-width: 992px) {
     .caption-container {
         padding: 40px;
@@ -109,7 +115,68 @@
     .caption-container h2, .caption-container p {
         max-width: 100%;
     }
+
+    .caption-container h2 {
+        font-size: 2.4rem;
+    }
+
+    .caption-container p {
+        font-size: 1.3rem;
+    }
+
+    .buy-btn {
+        font-size: 1rem;
+    }
 }
+
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 500px;
+    }
+
+    .caption-container h2 {
+        font-size: 2rem;
+    }
+
+    .caption-container p {
+        font-size: 1.2rem;
+    }
+
+    .buy-btn {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .carousel-image {
+        height: 400px;
+    }
+
+    .caption-container {
+        padding: 20px;
+    }
+
+    .caption-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .caption-container p {
+        font-size: 1rem;
+    }
+
+    .buy-btn {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+
+    .prev, .next {
+        padding: 12px;
+        font-size: 20px;
+    }
+}
+
 .cars-section {
     padding: 20px;
     position: relative;
@@ -118,7 +185,7 @@
 
 .title-paragraph {
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -136,19 +203,21 @@
 .cars-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 15px;
+    gap: 20px;
     width: 100%;
     margin: auto;
 }
 
+
 .car-card {
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: #f8f8f8;
+    max-width: 100%;
 }
 
 .car-card img {
@@ -159,35 +228,38 @@
 }
 
 .car-card h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 .car-card ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     list-style-type: none;
-    padding-left: 0;
-    margin: 0 0 10px 0;
+
 }
 
 .car-card ul li {
     display: inline-block;
-    padding-left: 10px;
     white-space: nowrap;
+    margin-right: 5px;
     position: relative;
 }
 
-.car-card ul li:not(:first-child)::before {
+
+.car-card ul li::before {
     content: '•';
     color: black;
-    position: absolute;
-    left: 0;
 }
 
-.car-card ul li:first-child {
-    padding-left: 0;
+.car-card ul li:first-child::before {
+    content: '';
+}
+
+.cars-section, .cars-grid, .car-card, .title-paragraph {
+    max-width: 100%;
 }
 
 .price-button-row {
@@ -198,7 +270,7 @@
 }
 
 .car-card p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     color: #191919;
     font-weight: bold;
     margin: 0;
@@ -212,11 +284,13 @@
     border: none;
     border-radius: 10px;
     white-space: nowrap;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .car-card .btn:hover {
     background-color: red;
 }
+
 .view-all-container {
     display: flex;
     justify-content: center;
@@ -229,28 +303,50 @@
     padding: 10px 50px;
     border: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
 }
+
 .view-all-btn:hover {
     background-color: darkred;
 }
 
+@media (max-width: 1280px) {
+    .cars-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
     .cars-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+    .title-paragraph h2 {
+        font-size: 1.8rem;
+    }
+
+    .title-paragraph p {
+        font-size: 1rem;
+    }
     .cars-grid {
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 480px) {
+    .title-paragraph h2 {
+        font-size: 1.5rem;
+    }
+
+    .title-paragraph p {
+        font-size: 0.9rem;
+    }
+}
+
 .reviews-section {
     margin: auto;
     padding: 20px;
@@ -265,14 +361,13 @@
 }
 
 .reviews-header h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     margin: 0;
     font-weight: bold;
 }
 
-
 .reviews-header span {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     margin: 0;
     font-weight: bold;
 }
@@ -280,7 +375,7 @@
 #review-count {
     font-weight: normal;
     margin-left: 5px;
-    color:#757575;
+    color: #757575;
 }
 
 .average-rating {
@@ -289,7 +384,7 @@
 }
 
 .average-rating span {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     margin-right: 10px;
 }
 
@@ -298,7 +393,7 @@
 }
 
 .star {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .star.full {
@@ -313,12 +408,6 @@
 
 .star.empty {
     color: lightgray;
-}
-
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
 }
 
 .review-item {
@@ -351,13 +440,55 @@
 }
 
 .review-content p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     margin: 10px 0;
 }
 
 .review-content small {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     color: gray;
+}
+
+@media (max-width: 768px) {
+    .reviews-header {
+        text-align: center;
+        padding: 0;
+    }
+
+    .average-rating {
+        justify-content: center;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-item {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .reviews-header span {
+        font-size: 2rem;
+    }
+
+    .average-rating span {
+        font-size: 1.2rem;
+    }
+
+    .review-item {
+        font-size: 1rem;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .swiper-button-prev:after,
