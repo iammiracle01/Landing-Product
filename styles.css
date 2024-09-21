@@ -202,8 +202,13 @@
 
 .cars-grid {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+=======
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+>>>>>>> 7b6878acdc081be171acb8da320ac03e46767a8f
     width: 100%;
     margin: auto;
 }
